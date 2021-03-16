@@ -1,0 +1,26 @@
+15th October 2020
+-----------------
+
+INSERT INTO `eswapclient_module_category` (`nCategoryId`, `nParentId`, `vCategoryTitle`, `vCategoryFile`, `nCposition`, `vActive`, `nTmp_status`) VALUES (24, 21, 'Cashback', 'cashback.php', 'Footer', '1', '1');
+
+
+
+
+
+nCategoryId is autoincrement field
+
+
+INSERT INTO `eswapcontent` (`content_id`, `content_name`, `content_type`, `content_status`) VALUES
+(44, 'newofferReceived', 'email', 'y');
+
+INSERT INTO `eswapcontent_lang` (`content_lang_id`, `content_id`, `lang_id`, `content`, `content_title`) VALUES
+(181, 44, 1, '\r\n      New offer has been received from {receiver_user_name}.Please login to view the offer details.<br /><br />The {SITE_NAME} Crew | {SITE_URL}<br />                      \r\n\r\n', 'New offer recieved at {SITE_NAME}');
+
+
+INSERT INTO `eswapcontent` (`content_id`, `content_name`, `content_type`, `content_status`) VALUES
+(45, 'counterOfferReceived', 'email', 'y');
+
+
+
+INSERT INTO `eswapcontent_lang` (`content_lang_id`, `content_id`, `lang_id`, `content`, `content_title`) VALUES
+(186, 45, 1, '\r\n  Counter offer has been received from {receiver_user_name}.Please login to view the offer details.<br /><br />The {SITE_NAME} Crew | {SITE_URL}                              \r\n\r\n', 'Counter offer recieved at {SITE_NAME}');

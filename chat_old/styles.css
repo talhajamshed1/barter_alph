@@ -1,0 +1,89 @@
+.body-holder
+{
+  width : 504px;
+  text-align : center;
+}
+.body-holder .output-div-container
+{
+	border:2px solid #D8D8D8;
+	overflow : auto;
+	text-align : left;
+	background-color:#FEFFE1;
+}
+#output_div
+{
+  /*border:1px solid silver;*/
+  background-color:#FEFFE1;
+  height: 300px;
+  width : 470px;
+  overflow: auto;
+  font-family : verdana;
+  font-size : 12px;
+}
+.window
+{
+  height : 34px;
+  text-align : left;
+}
+#tools
+{
+  width : 200px;
+  height : 150px;
+  border : 1px solid red;
+  position:absolute;
+  top : 185px;
+  left : 22px;
+  background : #F1F2FE;
+  border-top : 1px solid silver;
+  border-left : 1px solid silver;
+  border-right : 2px solid silver;
+  border-bottom : 2px solid silver;
+  visibility : hidden;
+}
+.tool_table
+{
+  border : 1px solid silver; 
+  border-bottom : none; 
+  border-top : none; 
+  background : #F1F2FE;
+}
+#window_title
+{
+  font-size : 12;
+  font-weight : bold;
+  color : white;
+  float : left;
+  clear:both;
+}
+
+.input-div
+{
+	text-align:left;
+	background-color:#F1F2FE;
+	border:1px solid silver;
+	padding:4px;
+	height:50px;
+}
+.ajax-div
+{
+	margin:20px;
+	border:1px solid #3333CC;
+	background-color: #6699FF;
+	padding:3px;
+}
+textarea
+{
+  border : 1px solid #BCBCBC;
+  width: 398px;
+  height : 45px;
+  vertical-align : top;
+}
+input
+{
+  border : 1px solid #BCBCBC;
+  baackground : #D8D8D8;
+  height : 48px;
+  width : 85px;
+  vertical-align : top;
+}
+		

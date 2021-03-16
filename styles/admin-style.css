@@ -1,0 +1,28 @@
+.tbl-brd-btm td{
+	border-bottom: 1px solid #ddd;
+	text-align: left;
+	font-size: 13px;
+}
+.tbl-brd-btm td:last-child{
+	text-align: center;
+}
+.tbl-header-custom-1 td{
+	font-size: 11px;
+}
+.table-pagination{padding: 10px 0}
+.tbl-header-custom-2 td{
+	padding: 6px 0;
+}
+.tbl-header-custom-3 td{
+	padding: 8px 0;
+	border-bottom:1px solid #ddd;
+}
+
+@media only screen and (max-width: 992px) {
+  .admin_container{
+  	width: 100%;
+  }
+  .logo_admin{padding: 15px 25px;}
+  .adminwelcome{padding-right: 25px;}
+  .admin_wrapper{padding-right: 25px;}
+} 

@@ -1,0 +1,2 @@
+Clone URL : ssh://dev3@192.168.0.11:/var/www/repository/products/eswap.git
+

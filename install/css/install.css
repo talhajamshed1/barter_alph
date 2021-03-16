@@ -1,0 +1,82 @@
+/*-------------------------------------------styles for installer--------------------------------------------*/
+.bodyinstaller{
+	background-image:none;
+	background-color:#ffffff;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;
+	line-height:18px;
+	color:#333333;
+        margin:0;
+}
+.header_row{
+	  background: url("../img/eyewear/headerbg.png") repeat-x scroll center bottom #FFFFFF;
+    border-bottom: 4px solid #E18600;
+    height: 116px;
+    margin: 0;}
+.header_row #items_top_area{
+	float:right;
+	color: #E18600;}
+.header_container{
+	padding-top:15px;}
+.sitewidth{
+	width:1250px;
+	margin:0 auto;}
+.header_row #items_top_area a{
+	color: #E18600;
+	font-family:Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+.header_container h4{
+	padding-right:10px;
+	color:#333333;}
+.header_row #items_top_area a:hover{
+	 background-color: #E18600;
+    color: #FFFFFF;}
+.bodyinstaller .maintext{
+	color:#333333;}
+.bodyinstaller input[type="text"],
+.bodyinstaller input[type="password"]{
+	 border: 1px solid #CCCCCC;
+    color: #666666;
+    font-family: Arial,Helvetica,sans-serif;
+    padding: 7px;}
+.bodyinstaller fieldset{
+	padding:10px;}
+.adm_cred{
+	border:1px solid #cfcfcf;
+	padding:5px;
+	width:338px;
+	background-color:#FDFBF8;
+	float:left;}
+.installr_footer{
+	   border-top: 4px solid #E18600;
+	   background-color:#434343;
+	   height:50px;}
+
+.bodyinstaller .buttn_admin{
+	   padding: 5px 0;
+	   width:200px;
+	   text-align:center;}
+
+.block_class {
+    color: #F4700E;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-weight: bold;
+}
+
+.buttn_admin {
+    background: url("../css/ong-btn.jpg") repeat-x scroll 0 0 transparent;
+    border: 1px solid #DE6823;
+    border-radius: 5px 5px 5px 5px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 15px;
+    height: 30px;
+    margin: 10px 10px 10px 0;
+    text-transform: uppercase;
+    width: 100px;
+}
+

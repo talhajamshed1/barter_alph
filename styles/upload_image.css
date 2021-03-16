@@ -1,0 +1,167 @@
+
+.cropselection_popup {
+    background-color: #fff;
+    border: 1px solid #cfcfcf;
+    box-shadow: 3px 3px 5px 1px #cccccc;
+    left: left;
+    margin: auto;
+    padding: 2px;
+    position: absolute;
+    top: top;
+    
+    z-index:1900;
+}
+
+.notificationdivstyle1{
+	margin:10px 0;
+	border:1px solid #C2CEE5;
+	padding:15px;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	color:#3B5998;
+        background-color: #EDEFF4;
+	/*background: url(images/notification_icon.jpg) 2% 50% #EDEFF4 no-repeat;*/
+	}
+
+    .banner_close {
+    background: url("../images/close_3.gif") no-repeat scroll 0 0 transparent;
+    height: 16px;
+    position: absolute;
+    right: 40px;
+    top: 10px;
+    width: 17px;
+}
+
+.ajax-file-upload-bar{
+    background:url(../images/progressbarbg.png)#80AF2E 0% 0% repeat-x;
+    width:0;height:15px;
+    border-radius:3px;
+}
+
+
+
+
+.ajax-file-upload-statusbar {
+border: 1px solid #0ba1b5;
+margin-top: 10px;
+margin-right: 10px;
+margin: 5px;
+-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+border-radius: 4px;
+padding: 5px 5px 5px 5px
+}
+.ajax-file-upload-filename {
+width: 100%;
+height: auto;
+margin: 0 5px 5px 10px;
+color: #807579
+}
+.ajax-file-upload-progress {
+margin: 0 10px 5px 10px;
+position: relative;
+width: 250px;
+border: 1px solid #ddd;
+padding: 1px;
+border-radius: 3px;
+display: inline-block
+}
+.ajax-file-upload-bar {
+background-color: #0ba1b5;
+width: 0;
+height: 20px;
+border-radius: 3px;
+color:#FFFFFF;
+}
+.ajax-file-upload-percent {
+position: absolute;
+display: inline-block;
+top: 3px;
+left: 48%
+}
+.ajax-file-upload-red {
+-moz-box-shadow: inset 0 39px 0 -24px #e67a73;
+-webkit-box-shadow: inset 0 39px 0 -24px #e67a73;
+box-shadow: inset 0 39px 0 -24px #e67a73;
+background-color: #e4685d;
+-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+border-radius: 4px;
+display: inline-block;
+color: #fff;
+font-family: arial;
+font-size: 13px;
+font-weight: normal;
+padding: 4px 15px;
+text-decoration: none;
+text-shadow: 0 1px 0 #b23e35;
+cursor: pointer;
+vertical-align: top;
+margin-right:5px;
+}
+.ajax-file-upload-green {
+background-color: #77b55a;
+-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+border-radius: 4px;
+margin: 0;
+padding: 0;
+display: inline-block;
+color: #fff;
+font-family: arial;
+font-size: 13px;
+font-weight: normal;
+padding: 4px 15px;
+text-decoration: none;
+cursor: pointer;
+text-shadow: 0 1px 0 #5b8a3c;
+vertical-align: top;
+margin-right:5px;
+}
+.ajax-file-upload {
+	font-family: "PT Sans",sans-serif;
+	font-size: 16px;
+   font-weight: normal;
+	padding: 15px 20px;
+	cursor:pointer;
+	line-height:20px;
+	height:auto;
+	margin:0 10px 10px 0;
+  display: inline-block;
+  background: #fff;
+  border:0;
+  color: #888;
+  text-decoration: none;
+  padding: 6px 10px 4px 10px; 
+  border: none;
+  vertical-align:middle;   text-transform:uppercase;
+  }
+  
+
+.ajax-upload-dragdrop
+{
+    border:0 dotted #A5A5C7;
+    color: #DADCE3;
+    text-align:left;
+    vertical-align:middle;
+    padding:0;
+}
+
+.ajax-upload-dragdrop.state-hover
+{
+    border: 2px solid #A5A5C7;
+}
+.ajax-file-upload-error {
+    color: red;
+}
+
+.prdctimg_listing{
+    width:150;
+    height:150;
+}
+
+.quick_img_popup_outer img{
+    width:100%!important;
+}
+

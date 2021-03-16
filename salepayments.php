@@ -1,0 +1,206 @@
+<?php
+/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
+// +----------------------------------------------------------------------+
+// | PHP version 4/5                                                      |
+// +----------------------------------------------------------------------+
+// | This source file is a part of iScripts eSwap                         |
+// +----------------------------------------------------------------------+
+// | Authors: Programmer<simi@armia.com>        		                  |
+// +----------------------------------------------------------------------+
+// | Copyrights Armia Systems, Inc and iScripts.com � 2005                |
+// | All rights reserved                                                  |
+// +----------------------------------------------------------------------+
+// | This script may not be distributed, sold, given away for free to     |
+// | third party, or used as a part of any internet services such as      |
+// | webdesign etc.                                                       |
+// +----------------------------------------------------------------------+
+include ("./includes/config.php");
+include ("./includes/session.php");
+include ("./includes/functions.php");
+include("./languages/" . $_SESSION['lang_folder'] . "/user.php"); //language file for user
+include ("./includes/session_check.php");
+include_once('./includes/gpc_map.php');
+
+$qryopt = "";
+if ($txtSearch != "") {
+    if ($ddlSearchType == "transmode") {
+        switch ($txtSearch) {
+            case TEXT_CREDIT_CARD:
+                $qryopt .= "  and sd.vMethod  = 'cc'";
+                break;
+
+            case TEXT_PAYPAL:
+                $qryopt .= "  and sd.vMethod = 'pp'";
+                break;
+
+            default:
+                ;
+        } // switch
+    }//end if
+    else if ($ddlSearchType == "transno") {
+        $qryopt .= "  and sd.vTxnId like '" . addslashes($txtSearch) . "%'";
+    }//end else if
+    else if ($ddlSearchType == "amount") {
+        $qryopt .= "  and s.nValue like '" . addslashes($txtSearch) . "%'";
+    }//end else if
+    else if ($ddlSearchType == "date") {
+        $qryopt .= "  and dDate  like '" . addslashes($txtSearch) . "%'";
+    }//end else if
+}//end if
+
+$sqlsale = "SELECT s.vTitle, sd.nAmount, date_format(sd.dDate ,'%m/%d/%Y') as dDate, sd.vTxnId, sd.vMethod  , u.vLoginName ";
+$sqlsale .= " FROM " . TABLEPREFIX . "sale s  INNER JOIN " . TABLEPREFIX . "saledetails sd ON s.nSaleId = sd.nSaleId LEFT JOIN  " . TABLEPREFIX . "users u ON u.nUserId  = s.nUserId ";
+$sqlsale .= " WHERE ";
+$sqlsale .= " sd.nUserId  = '" . $_SESSION["guserid"] . "' AND (sd.vSaleStatus ='2'  OR sd.vSaleStatus ='3') ";
+$sqlsale .= $qryopt;
+
+$totalrows = mysqli_num_rows(mysqli_query($conn, $sqlsale));
+
+$navigate = pageBrowser($totalrows, 5, 5, "&ddlSearchType=$ddlSearchType&txtSearch=$txtSearch&", $_GET[numBegin], $_GET[start], $_GET[begin], $_GET[num]);
+//execute the new query with the appended SQL bit returned by the function
+$sqlsale = $sqlsale . $navigate[0];
+$rssale = mysqli_query($conn, $sqlsale) or die(mysqli_error($conn));
+
+include_once('./includes/title.php');
+?>
+<body onLoad="timersOne();">
+    <script language="javascript" type="text/javascript">
+        function clickSearch()
+        {
+            document.frmAffMain.submit();
+        }//end fucntion
+    </script>
+<?php include_once('./includes/top_header.php'); ?>
+    <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td class="headerbg"><?php require_once("./includes/header.php"); ?>
+                <?php require_once("menu.php"); ?>
+                <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="10%" height="688" valign="top"><?php include_once ("./includes/usermenu.php"); ?>
+                                        <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td id="leftcoloumnbtm"></td>
+                                            </tr>
+                                        </table></td>
+                                    <td width="74%" valign="top">
+                                        <table width="100%"  border="0" cellspacing="0" cellpadding="2">
+                                            <tr>
+                                                <td class="link3">&nbsp;</td>
+                                            </tr>
+                                        </table>
+                                        <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td class="heading" align="left"><?php echo HEADING_SALES_TRANSACTION_DETAILS; ?></td>
+                                            </tr>
+                                        </table>
+                                        <table width="100%"  border="0" cellspacing="0" cellpadding="10">
+                                            <tr>
+                                                <td align="left" valign="top"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                                                        <tr>
+                                                            <td bgcolor="#EEEEEE"><table width="100%"  border="0" cellspacing="1" cellpadding="4" class="maintext2">
+                                                                    <form name="frmAffMain" method="POST" action = "<?php echo $_SERVER['PHP_SELF'] ?>">
+                                                                        <?php
+                                                                        $message = ($message != '') ? $message : $_SESSION['sessionMsg'];
+                                                                        unset($_SESSION['sessionMsg']);
+
+                                                                        if (isset($message) && $message != '') {
+                                                                            ?>
+                                                                            <tr bgcolor="#FFFFFF">
+                                                                                <td colspan="7" align="center" class="warning"><?php echo $message; ?></td>
+                                                                            </tr>
+                                                                        <?php }//end if?>
+                                                                        <tr align="right" bgcolor="#FFFFFF">
+                                                                            <td colspan="7"><a href="salepaymentsbyme.php"><b><?php echo LINK_BACK; ?></b></a>&nbsp;</td>
+                                                                        </tr>
+                                                                        <tr bgcolor="#FFFFFF">
+                                                                            <td colspan="7" align="center"><table border="0" width="100%" class="maintext">
+                                                                                    <tr>
+                                                                                        <td valign="top" align="right">
+                                                                                            <?php echo TEXT_SEARCH; ?>
+                                                                                            &nbsp;  <select name="ddlSearchType" class="textbox2">
+                                                                                                        <!---<option value="date" <?php if ($ddlSearchType == "date" || $ddlSearchType == "") {
+                                                                                                            echo("selected");
+                                                                                                        } ?>>Transaction Date(mm/dd/yyyy)</option>--->
+                                                                                                <option value="amount"  <?php if ($ddlSearchType == "amount" || $ddlSearchType == "") {
+                                                                                                            echo("selected");
+                                                                                                        } ?>><?php echo TEXT_AMOUNT; ?></option>
+                                                                                                <option value="transmode"  <?php if ($ddlSearchType == "transmode") {
+                                                                                                            echo("selected");
+                                                                                                        } ?>><?php echo TEXT_TRANSACTION_MODE; ?></option>
+                                                                                                <option value="transno" <?php if ($ddlSearchType == "transno") {
+                                                                                                            echo("selected");
+                                                                                                        } ?>><?php echo TEXT_TRANSACTION_NUMBER; ?></option>
+                                                                                            </select>
+                                                                                            &nbsp;<input type="text" name="txtSearch" size="20" maxlength="50" value="<?php echo(htmlentities($txtSearch)); ?>"  onKeyPress="if(window.event.keyCode=='13'){ return false; }" class="textbox2">
+                                                                                        </td>
+                                                                                        <td align="left" valign="baseline">
+                                                                                            <a href="javascript:clickSearch();"><img src='../images/gobut.gif'  width="20" height="20" border='0' ></a>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table></td>
+                                                                        </tr>
+                                                                        <tr align="center" bgcolor="#FFFFFF" class="gray">
+                                                                            <td width="7%"><?php echo TEXT_SLNO; ?></td>
+                                                                            <td width="19%"><?php echo TEXT_TITLE; ?></td>
+                                                                            <td width="19%"><?php echo TEXT_USERNAME; ?></td>
+                                                                            <td width="19%"><?php echo TEXT_TRANSACTION_DATE; ?></td>
+                                                                            <td width="16%"><?php echo TEXT_TRANSACTION_NUMBER; ?></td>
+                                                                            <td width="20%"><?php echo TEXT_TRANSACTION_MODE; ?></td>
+                                                                            <td width="20%"><?php echo TEXT_AMOUNT; ?></td>
+                                                                        </tr>
+                                                                        <?php
+                                                                        if (mysqli_num_rows($rssale) > 0) {
+                                                                            $cnt = 1;
+                                                                            while ($arr = mysqli_fetch_array($rssale)) {
+                                                                                $paydate = $arr["dDate"];
+                                                                                $amount = $arr["nAmount"];
+                                                                                $transid = $arr["vTxnId"];
+
+                                                                                //transaction mode
+                                                                                $trnansmode = get_payment_name($arr["vMethod"]);
+
+                                                                                $title = $arr["vTitle"];
+                                                                                $username = $arr["vLoginName"];
+                                                                                ?>
+                                                                                <tr bgcolor="#FFFFFF">
+                                                                                    <td align="center"><?php echo $cnt; ?></td>
+                                                                                    <td><?php echo htmlentities($title); ?></td>
+                                                                                    <td><?php echo htmlentities($username); ?></td>
+                                                                                    <td><?php echo date('m/d/Y', strtotime($paydate)); ?></td>
+                                                                                    <td><?php echo htmlentities($transid); ?></td>
+                                                                                    <td><?php echo htmlentities($trnansmode); ?></td>
+                                                                                    <td><?php echo htmlentities($amount); ?></td>
+                                                                                </tr>
+                                                                                <?php
+                                                                                $cnt++;
+                                                                            }//end while
+                                                                        }//end if
+                                                                        ?>
+                                                                        <tr bgcolor="#FFFFFF">
+                                                                            <td colspan="7" align="left"><table width="100%"  border="0" cellspacing="1" cellpadding="5">
+                                                                                    <tr>
+                                                                                        <td align="left"><?php echo($navigate[2]); ?></td>
+                                                                                        <td align="right"><?php echo str_replace('{total_rows}', $totalrows, str_replace('{current_rows}', $navigate[1], TEXT_LISTING_RESULTS)); ?></td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </form>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+										<?php include('./includes/sub_banners.php'); ?>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+<?php require_once("./includes/footer.php"); ?>

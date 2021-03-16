@@ -1,0 +1,150 @@
+.body-holder
+{
+  width : 504px;
+  text-align : center;
+}
+.body-holder .output-div-container
+{
+  overflow : auto;
+  text-align : left;
+  background-color: #fff;
+  border-bottom: 0;
+}
+#output_div
+{
+  /*border:1px solid silver;*/
+  background-color: #fff;
+  height: 300px;
+  width: 100%;
+  overflow: auto;
+  font-family : verdana;
+  font-size : 12px;
+  padding: 0px;
+}
+.window
+{
+  height : 34px;
+  text-align : left;
+}
+#tools
+{
+  width : 200px;
+  height : 150px;
+  border : 1px solid red;
+  position:absolute;
+  top : 185px;
+  left : 22px;
+  background : #F1F2FE;
+  border-top : 1px solid silver;
+  border-left : 1px solid silver;
+  border-right : 2px solid silver;
+  border-bottom : 2px solid silver;
+  visibility : hidden;
+}
+.tool_table
+{
+  border : 1px solid silver; 
+  border-bottom : none; 
+  border-top : none; 
+  background : #F1F2FE;
+}
+#window_title
+{
+  font-size : 12;
+  font-weight : bold;
+  color : white;
+  float : left;
+  clear:both;
+}
+
+.input-div
+{
+  text-align:left;
+  padding:4px;
+}
+.ajax-div
+{
+  margin:20px;
+  border:1px solid #3333CC;
+  background-color: #6699FF;
+  padding:3px;
+}
+textarea
+{
+  border : 1px solid #BCBCBC;
+  width: 398px;
+  height : 45px;
+  vertical-align : top;
+}
+input
+{
+  border : 1px solid #BCBCBC;
+  baackground : #D8D8D8;
+  height : 48px;
+  width : 85px;
+  vertical-align : top;
+}
+    
+
+.bottom-chat-section{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #ddd;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 28px;
+}
+.bottom-chat-section a{
+  width: 25px;
+  height: auto;
+  text-align: center;
+}
+
+.chat-bottom-tiles{
+   width: calc(100% - 25px);
+   position: relative;
+}
+.bottom-chat-section textarea{
+ width: 85%;
+ height: 30px;
+ border-radius: 5px;
+ display: block;
+ resize: none;
+ border: 0;
+ outline: 0;
+ display: block;
+}
+.bottom-chat-section input{
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 3px;
+  top: 2px;
+  background: url(../images/send-icon.svg) no-repeat center#f99e00;
+  text-indent: -9999px;
+  background-size: 15px;
+  border: 0;
+  border-radius: 50%;
+  outline: 0;
+  cursor: pointer;
+}
+.bottom-chat-section input:hover{opacity: .8}
+.bottom-chat-section textarea::-webkit-input-placeholder{
+  padding-top: 5px;
+}
+.main_container{
+  border: 1px solid #ddd;
+  padding-bottom: 10px;
+  border-radius: 0 0 10px 10px;
+}
+.error_msg_outer{
+      background: #f8d7da;
+    padding: 14px 9px;
+    height: auto;
+    border-radius: 5px;
+    font-size: 13px;
+    display: flex;
+    align-items: center; 
+}

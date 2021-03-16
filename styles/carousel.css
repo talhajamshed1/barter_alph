@@ -1,0 +1,203 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+body {
+  padding:0px; 
+  color: #5a5a5a;
+}
+
+
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+.navbar-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 20;
+}
+
+/* Flip around the padding for proper display in narrow viewports */
+.navbar-wrapper > .container {
+  padding-right: 0;
+  padding-left: 0;
+}
+.navbar-wrapper .navbar {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.navbar-wrapper .navbar .container {
+  width: auto;
+}
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+
+.carousel {
+  height: 425px;
+}
+.carousel-caption {
+  z-index: 10;
+}
+
+.carousel .item {
+  height: 422px; width:100%;
+}
+.carousel-inner > .item > img { 
+  height: 425px;
+}
+.img-responsive, .thumbnail > img, .thumbnail a > img, .carousel-inner > .item > img, .carousel-inner > .item > a > img{
+	display:inline!important;
+}
+
+.item {
+	background-image:none!important;
+}
+
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: normal;
+}
+.marketing .col-lg-4 p {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+	font-weight: 300;
+	line-height: 1;
+	letter-spacing: -1px;
+}
+.carousel-control{
+	z-index:999!important;
+}
+.carousel-caption{
+	float:left;
+	width:100%;
+	padding:0px!important; margin:0px!important;
+}
+.carousel-caption h1{
+	top:0px!important;
+	padding:0px 0px 10px 0px!important; margin:0px!important;
+	}
+	.carousel-caption h3{
+	top:0px!important;
+	padding:0px!important; margin:0px!important;
+	}
+	.carousel-caption h3 div{
+	display:none;
+}
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (max-width: 767px) {
+.carousel{
+	height:300px;
+	}
+	.carousel .item {
+	height:300px; width:100%;
+}
+.carousel-inner .item a img{
+		max-width:inherit!important;
+}
+.carousel-caption{
+	bottom:150px!important; left:0px!important;
+	padding:0 10px!important;
+}
+}
+
+@media (min-width: 768px) {
+  /* Navbar positioning foo */
+  .navbar-wrapper {
+    margin-top: 20px;
+  }
+  .navbar-wrapper .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .navbar-wrapper .navbar {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  /* The navbar becomes detached from the top, so we round the corners */
+  .navbar-wrapper .navbar {
+    border-radius: 4px;
+  }
+
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+.carousel-inner .item a img{
+		max-width:inherit!important;
+}
+.carousel-caption{
+	bottom:180px!important; left:10%!important; text-align:left!important;
+}
+}
+
+@media (min-width: 992px) {
+  .featurette-heading {
+    margin-top: 120px;
+  }
+.carousel-caption{
+	bottom:180px!important; left:10%!important; text-align:left!important;
+}
+}
+
+
+@media (max-width: 768px) {
+	.carousel-caption h1{
+	font-weight:bold!important; font-size:17px!important;
+	}
+	.carousel-caption h3{
+	font-size:14px!important;
+	}
+	.carousel-caption{
+	text-align:center; width:100%;
+	}
+	.carousel-caption h1, .carousel-caption h3{
+	text-align:center; width:100%;
+}
+.home_search .form-group{
+	width:60%;
+}
+.home_search .form-control{
+	width:100%;
+}	
+}
+
+
+.banner_search_outer{
+	left:15px!important;
+} 

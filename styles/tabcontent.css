@@ -1,0 +1,102 @@
+.shadetabs
+{
+	height:44px;
+	padding: 0;
+	margin-left: 10px;
+	margin-top: 15px;
+	font-size:15px;
+	margin-bottom: 0;
+	font-family: 'PT Sans', sans-serif;
+	list-style-type: none;
+	text-align: left; /*set to left, center, or right to align the menu as desired*/
+}
+
+.shadetabs li
+{
+	display: inline;
+	margin: 0;
+}
+
+.shadetabs li a
+{
+	text-decoration: none;
+	padding: 9px 16px;
+	margin-right: 3px;
+	border: 1px solid #778;
+	color: #2d2b2b;
+	/*background-color:#000000;*/
+}
+
+.shadetabs li a
+{
+	/*color: #FFFFFF !important;#2d2b2b;*/
+        color: #2d2b2b;
+		font-family:14px;
+}
+
+.shadetabs li a:visited
+{
+	color: #2d2b2b;
+}
+
+.shadetabs li a:hover
+{
+	text-decoration: none;
+	color: #0789af;
+	
+}
+
+.shadetabs li.selected
+{
+	position: relative;
+	top: 1px;
+}
+.shadetabs li.selected a
+{
+	background-color:#ffffff;
+	color:#3089ca
+}
+.shadetabs li.selected a:visited
+{ /*selected main tab style */
+	border-bottom-color: white;
+	background-color:#ffffff;
+	color:#3089ca;
+}
+.shadetabs li.selected a:hover
+{ /*selected main tab style */
+	border-bottom-color: white;
+	background-color:#ffffff;
+	color:#3089ca;
+}
+
+.shadetabs li.selected a:hover
+{ /*selected main tab style */
+	text-decoration: none;
+}
+
+.tabcontentstyle
+{ /*style of tab content oontainer*/
+	margin-top:0;
+	margin-bottom: 1em;
+	border-top:1px solid #ccc;
+	/*padding: 1px;*/
+	margin-left: 10px;
+	padding:0 15px 0 25px;
+	border-left:1px solid #cfcfcf;
+	border-right:1px solid #cfcfcf;
+	border-bottom:1px solid #cfcfcf;
+	
+}
+
+.tabcontent
+{
+	display:none;
+}
+
+@media print 
+{
+	.tabcontent 
+	{
+		display:block!important;
+	}
+}

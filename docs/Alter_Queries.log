@@ -1,0 +1,36 @@
+ALTER TABLE `es_saledetails` 
+ADD COLUMN `vAddress1` VARCHAR(100) NULL DEFAULT NULL,
+ADD COLUMN `vAddress2` VARCHAR(100) NULL DEFAULT NULL,
+ADD COLUMN `vCity` VARCHAR(100) NULL DEFAULT NULL,
+ADD COLUMN `vState` VARCHAR(100) NULL DEFAULT NULL,
+ADD COLUMN `vCountry` VARCHAR(100) NULL DEFAULT NULL,
+ADD COLUMN `nZip` VARCHAR(11) NULL DEFAULT NULL,
+ADD COLUMN `vPhone` VARCHAR(50) NULL DEFAULT NULL
+
+
+CREATE TABLE `eswap_sliders` (
+	`nSId` INT(11) NOT NULL AUTO_INCREMENT,
+	`vName` VARCHAR(200) NULL,
+	`vImg` VARCHAR(200) NULL DEFAULT NULL,
+	`nDate` DATE NULL DEFAULT '0000-00-00',
+	`vActive` ENUM('1','0') NULL DEFAULT '0',
+	PRIMARY KEY (`nSId`)
+)
+COLLATE='latin1_swedish_ci'
+ENGINE=MyISAM;
+
+INSERT INTO `es_content` (`content_name`, `content_type`, `content_status`) VALUES ('homebannertexts', 'page', 'y');
+
+UPDATE `eswapClient_Module_Category` SET `nTmp_status`=0 WHERE `nCategoryId`=1;
+UPDATE `eswapClient_Module_Category` SET `nTmp_status`=0 WHERE `nCategoryId`=5;
+UPDATE `eswapClient_Module_Category` SET `nTmp_status`=0 WHERE `nCategoryId`=6;
+UPDATE `eswapClient_Module_Category` SET `nTmp_status`=0 WHERE `nCategoryId`=8;
+UPDATE `eswapClient_Module_Category` SET `nTmp_status`=0 WHERE `nCategoryId`=9;
+UPDATE `eswapClient_Module_Category` SET `nParentId`=21 WHERE `nCategoryId`=15;
+UPDATE `eswapClient_Module_Category` SET `nParentId`=21 WHERE `nCategoryId`=16;
+UPDATE `eswapClient_Module_Category` SET `nParentId`=21 WHERE `nCategoryId`=17;
+UPDATE `eswapClient_Module_Category` SET `nParentId`=21 WHERE `nCategoryId`=18;
+
+DELETE FROM `eswapClient_Module_Category` WHERE `nCategoryId` = 14;
+DELETE FROM `eswapClient_Module_Category` WHERE `nCategoryId` = 20;
+

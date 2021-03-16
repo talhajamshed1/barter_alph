@@ -1,0 +1,304 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>{TITLE}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="en-us" />
+<style type="text/css" media="screen">
+	@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+	
+	body {
+		margin: 0px;
+		padding: 0px;
+	}
+	#BodyImposter {
+		    color: #666;
+    background: #fff;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+	}
+	#BodyImposter dd,
+	#BodyImposter dt,
+	#BodyImposter li,
+	#BodyImposter p,
+	#BodyImposter td {
+		font-size: 12px;
+		line-height: 1.5em;
+		font-family: 'Open Sans', sans-serif;
+	}
+	#BodyImposter dl,
+	#BodyImposter p,
+	#BodyImposter ol,
+	#BodyImposter ul {
+		margin: 0em 0em 1em 0em;
+	}
+	#BodyImposter img {
+		border: 0px;
+	}
+	#BodyImposter small {
+		font-size: 10px;
+		line-height: 1.3em;
+	}
+	#BodyImposter ol {
+		padding-left: 1em;
+	}
+	#Primary ul {
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+	#BodyImposter ol li {
+		margin: 0px;
+		padding: 0px;
+	}
+	#BodyImposter ul li {
+		background: url("{SITE-URL}/images/bullet.gif") no-repeat 0em 0.5em;
+		padding: 0px 0px 0px 8px;
+		margin: 0px;
+		list-style: none;
+	}
+	
+	/* links
+	--------------------------------------------------*/
+	
+	#BodyImposter a {
+		text-decoration: none;
+	}
+	#Primary a:link,
+	#Primary a:visited,
+	#Secondary a:link,
+	#Secondary a:visited {
+		font-size:13px!important;
+		font-weight:bold!important;
+		
+	}
+	#BodyImposter h2 a:link,
+	#BodyImposter h2 a:visited {
+		color: #FFF!important;
+		font-size:13px!important;
+		font-weight:500 !important;
+		text-decoration: none;
+		outline: 0;
+		background: transparent;
+	}
+	#Helpful a:link,
+	#Helpful a:visited {
+		color: #c2c2c2;
+		background: #fff;
+	}
+	#Legal a:link,
+	#Legal a:visited {
+		color: #999;
+		background: #ccc;
+	}
+	#BodyImposter a:hover {
+		text-decoration: none;
+	}
+	#BodyImposter h2 a:hover {
+		text-decoration: underline;
+	}
+	#BodyImposter a:active {
+		color: #000;
+		background: #fff;
+		text-decoration: none;
+	}
+	#Legal a:active {
+		color: #000;
+		background: #ccc;
+		text-decoration: none;
+	}
+	
+	/* heads
+	--------------------------------------------------*/
+	
+	#BodyImposter h1,
+	#BodyImposter h2 {
+		color: #000;
+		background: #fff;
+		font-family: 'Open Sans', sans-serif;
+		font-weight: bold;
+		line-height: normal;
+		margin: 0.75em 0em;
+		padding: 0px;
+	}
+	#Masthead h1 {
+		font-size: 28px;
+		color: #000;
+		background: transparent;
+	}
+	#Primary h2 {
+		font-size: 18px;
+	}
+	#Tertiary h2 {
+		font-size: 14px;
+	}
+	
+	/* boxes
+	--------------------------------------------------*/
+	
+	#Box {
+		width: 100%;
+		text-align: center;
+	}
+	#Content {
+		margin: 0px auto;
+		text-align: left;
+	}
+	#Content td#Primary {
+		width: 550px;
+	}
+	
+	#Helpful table {
+		color: #c2c2c2;
+		background: #fff;
+		margin: 0px auto;
+	}
+	#Helpful p {
+		width: 550px;
+		margin: 0px auto;
+		padding: 0px 20px;
+		text-align: left;
+	}
+	#Legal {
+		padding: 20px 0px;
+	}
+	#Legal table {
+		color: #999;
+		background: #ccc;
+		margin: 0px auto;
+	}
+	#Legal p {
+		width: 550px;
+		padding: 0px 20px;
+		text-align: left;
+	}
+	#Masthead {
+		padding: 0px 0px;
+	}
+	#Masthead table {
+		color: #000;
+		background: #F2F2F2;
+		margin: 0px auto;
+	}
+	#Masthead h1,
+	#Masthead p {
+		margin: 0px auto;
+		padding: 0px 20px;
+		text-align: left;
+	}
+	#Masthead p {
+		font-size: 14px;
+	}
+	#Masthead p #Date {
+		float: right;
+	}
+	#Tertiary {
+		padding: 20px 0px;
+	}
+	#Tertiary table {
+		color: #d69898;
+		background: #000;
+		margin: 0px auto;
+	}
+	#Tertiary h2 {
+		color: #fff;
+		background: #000;
+		padding: 0em 0em 0em 0em;
+	}
+	#Tertiary h2,
+	#Tertiary p {
+		margin: 0px auto;
+		padding: 0px 20px;
+		text-align: center;
+	}
+	#Helpful,
+	#Legal,
+	#Masthead,
+	#Tertiary {
+		width: 100%;
+		text-align: center;
+	}
+
+</style>
+</head>
+
+<body>
+<div id="BodyImposter">
+	<table cellspacing="0" cellpadding="15" width="100%">
+		<tr>
+			<td id="Helpful">&nbsp;</td>
+		</tr>
+	</table>
+	<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="45%">&nbsp;</td>
+      <td width="35%"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td align="center" style="font-family: 'Open Sans', sans-serif; color: #000; font-size:20px; ">&nbsp;</td>
+        </tr>
+      </table></td>
+        <td width="20%">&nbsp;</td>
+      </tr>
+    </table>
+	<table  style="color: #fff; background-color:#F2F2F2;" cellspacing="0" cellpadding="15" width="100%" align="center">
+		<tr>
+		  <td id="Masthead" style="color: #fff; background-color:#F2F2F2;">
+		  
+		    <table width="612" height="173" cellpadding="0" cellspacing="0">
+              <tr>
+                <td width="125" height="152" style="color: #fff; background: #F2F2F2; font-family: Helvetica, Arial, sans-serif;"><a href="{SITE-URL}/index.php" target="_blank"><img src="{SITE-URL}/images/{SITE-LOGO}" width="300" height="100" border="0"/></a></td>
+                <td width="423" valign="top" style="color: #000; background:#F2F2F2;  font-family: Helvetica, Arial, sans-serif;padding-top:10px;">
+                <p><span id="Date">{DATE}</span></p></td>
+              </tr>
+            </table>
+	      </td>
+		</tr>
+	</table>
+	<div id="Box">
+		<table id="Content" cellspacing="0" cellpadding="15" width="100%" style="border-left:#F2F2F2 solid 2px;border-right:#F2F2F2 solid 2px;">
+			<tr>
+				<td id="Primary" style="font-family: 'Open Sans', sans-serif;padding-bottom: 30px;">
+					<h1 style="text-align: center;margin-bottom: 20px">{HEAD}</h1>
+					<h2>Dear {NAME}</h2>
+
+{CONTENT}</td>
+			</tr>
+		</table>
+	</div>
+	<table style="color: #989896; background-color:#000000;" cellspacing="0" cellpadding="15" width="100%" align="center">
+		<tr>
+			<td id="Tertiary" style="color: #d69898; background: #000;" align="center">
+				<table width="600" cellpadding="0" cellspacing="0" align="center" >
+					<tr>
+						<td width="200" valign="top" style="color: #FFF; background: #000; font-family: Helvetica, Arial, sans-serif;" align="center">
+							<h2 style="color: #FFF; background: #000;">
+							<a style="color: #FFF;" href="{SITE-URL}/index.php" target="_blank">Home</a>&nbsp;|&nbsp;
+							<a style="color: #FFF;" href="{SITE-URL}/salelistdetailed.php" target="_blank">Sale</a>&nbsp;|&nbsp;
+							<a style="color: #FFF;" href="{SITE-URL}/aboutus.php" target="_blank">About Us</a>
+							</h2>
+			          </td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	<table style="color: #989896; background-color:#CCCCCC" cellspacing="0" cellpadding="15" width="100%">
+		<tr>
+			<td id="Legal" style="color: #999; background: #ccc;">
+				<table cellspacing="0" cellpadding="0" width="550">
+					<tr>
+						<td style="color: #999; background: #ccc;font-family: 'Open Sans', sans-serif;">
+							<p><font 
+style="FONT-SIZE: 9px; TEXT-TRANSFORM: none; COLOR: #6E6E6D; FONT-STYLE: normal; FONT-FAMILY: Arial, MS Sans serif, Arial, Verdana, Helvetica; TEXT-ALIGN: justify">You are a {SITE-NAME} Member. This email comes to you in accordance with {SITE-NAME}'s <a href="{SITE-URL}/privacy.php" target="_blank">Privacy Policy</a>. </font></p>
+					  </td>
+					</tr>
+				</table>
+		  </td>
+		</tr>
+	</table>
+</div>
+</body>
+</html>
