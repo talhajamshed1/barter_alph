@@ -5,7 +5,7 @@ ob_start();
 
 define('INSTALLED', true); 
 
-define('SITE_URL', 'http://localhost/barter/'); 
+define('SITE_URL', 'http://localhost/barter_alph'); 
 
 $HOST = "localhost:3306";
 $DATABASENAME = "alphares1_barter";
