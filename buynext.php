@@ -16,6 +16,7 @@
 // +----------------------------------------------------------------------+
 include ("./includes/config.php");
 include ("./includes/session.php");
+
 include ("./includes/functions.php");
 include("./languages/" . $_SESSION['lang_folder'] . "/category.php"); //language file
 include ("./includes/enable_module.php");
