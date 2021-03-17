@@ -36,6 +36,7 @@ else {
 }
 
 if(isset($_SESSION["guserid"]) && $_POST["postback"] != "Y") 
+
 {
    $sql = "SELECT  vAddress1, vAddress2 , vCity, vState, vCountry, nZip, vPhone FROM " . TABLEPREFIX . "users where nUserId ='" .$_SESSION["guserid"]. "'";
    $res           = mysqli_query($conn, $sql);
